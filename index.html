@@ -2,487 +2,192 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moduly - Moderno e Clean</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moduly - Desenvolvimento & Suporte TI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      --color-primary: #5a4ade;
-      --color-primary-hover: #4234b2;
-      --color-bg-light-start: #e0e7ff;
-      --color-bg-light-end: #f9fafb;
-      --color-bg-dark-start: #0f172a;
-      --color-bg-dark-end: #1e293b;
-      --color-text-light: #111827;
-      --color-text-dark: #e0e0e0;
-      --color-muted-light: #6b7280;
-      --color-muted-dark: #8a8a8a;
-      --shadow-light: rgba(0, 0, 0, 0.07);
-      --shadow-dark: rgba(0, 0, 0, 0.5);
-      --radius: 12px;
-      --transition: 0.3s ease;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, var(--color-bg-light-start), var(--color-bg-light-end));
-      color: var(--color-text-light);
-      transition: background var(--transition), color var(--transition);
-      min-height: 100vh;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    body.dark {
-      background: linear-gradient(135deg, var(--color-bg-dark-start), var(--color-bg-dark-end));
-      color: var(--color-text-dark);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      font-weight: 600;
-      transition: color var(--transition);
-    }
-
-    a:hover {
-      color: var(--color-primary);
-    }
-
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(255 255 255 / 0.85);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 2px 8px var(--shadow-light);
-      z-index: 1000;
-      padding: 16px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background var(--transition), box-shadow var(--transition);
-    }
-
-    body.dark header {
-      background: rgba(18 22 32 / 0.85);
-      box-shadow: 0 2px 12px var(--shadow-dark);
-    }
-
-    header .logo {
-      font-weight: 800;
-      font-size: 1.6rem;
-      color: var(--color-primary);
-      letter-spacing: 0.06em;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
-      font-size: 1rem;
-      color: var(--color-text-light);
-      font-weight: 600;
-      position: relative;
-    }
-
-    body.dark nav a {
-      color: var(--color-text-dark);
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0%;
-      height: 2px;
-      background: var(--color-primary);
-      transition: width 0.3s ease;
-      border-radius: 2px;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .theme-toggle {
-      cursor: pointer;
-      border: none;
-      background: none;
-      font-size: 1.4rem;
-      color: var(--color-primary);
-      transition: color 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      color: var(--color-primary-hover);
-    }
-
-    main {
-      padding-top: 88px;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    .hero {
-      position: relative;
-      height: 48vh;
-      margin-bottom: 64px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 12px 30px var(--shadow-light);
-      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1') center center/cover no-repeat;
-      transition: box-shadow var(--transition);
-    }
-
-    body.dark .hero {
-      box-shadow: 0 12px 40px var(--shadow-dark);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.55) 20%, rgba(0,0,0,0.85) 90%);
-      z-index: 1;
-      border-radius: var(--radius);
-    }
-
-    .hero-text {
-      position: absolute;
-      bottom: 32px;
-      left: 32px;
-      right: 32px;
-      z-index: 2;
+      background: radial-gradient(circle at top left, #1a1a2e, #0f0f1f 70%);
       color: #fff;
-      font-weight: 700;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      line-height: 1.1;
-      text-shadow: 0 4px 8px rgba(0,0,0,0.7);
-      max-width: 650px;
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
     }
 
-    section {
-      margin-bottom: 72px;
-    }
-
-    section h2 {
-      font-weight: 700;
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 40px;
-      color: var(--color-primary);
-    }
-
-    body.dark section h2 {
-      color: var(--color-primary-hover);
-    }
-
-    .grid {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    }
-
-    .card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      box-shadow: 0 4px 16px var(--shadow-light);
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: var(--color-text-light);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    body.dark .card {
-      background: #1e2633;
-      box-shadow: 0 4px 16px var(--shadow-dark);
-      color: var(--color-text-dark);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 32px var(--shadow-dark);
-    }
-
-    .card img {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 16px;
-    }
-
-    .card h3 {
-      margin: 0 0 12px;
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-
-    .card p {
-      font-weight: 400;
-      font-size: 1rem;
-      color: var(--color-muted-light);
-      transition: color 0.3s ease;
-    }
-
-    body.dark .card p {
-      color: var(--color-muted-dark);
-    }
-
-    .team-photo {
-      border-radius: 50%;
-      width: 96px;
-      height: 96px;
-      margin-bottom: 16px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .card:hover .team-photo {
-      box-shadow: 0 8px 22px rgba(79,70,229,0.7);
-    }
-
-    #sobre p {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-      font-weight: 400;
-      font-size: 1.1rem;
-      color: var(--color-muted-light);
-      line-height: 1.6;
-      padding: 24px 32px;
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: 0 8px 24px var(--shadow-light);
-      transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
-    }
-
-    body.dark #sobre p {
-      color: var(--color-muted-dark);
-      box-shadow: 0 8px 32px var(--shadow-dark);
-      background: #1e2633;
-    }
-
-    #openContact {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      background: var(--color-primary);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(90,74,222,0.6);
-      transition: background 0.3s ease;
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #openContact:hover {
-      background: var(--color-primary-hover);
-      box-shadow: 0 8px 26px rgba(66,52,178,0.8);
-    }
-
-    #contactModal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2100;
-      padding: 24px;
-    }
-
-    #contactModal.active {
-      display: flex;
-    }
-
-    #contactModal > div {
-      background: var(--color-bg-light-end);
-      color: var(--color-text-light);
-      border-radius: var(--radius);
-      padding: 36px 32px 32px;
-      max-width: 440px;
-      width: 100%;
-      box-shadow: 0 12px 48px var(--shadow-light);
-      position: relative;
-      transition: background 0.3s ease, color 0.3s ease;
-      font-size: 1rem;
-    }
-
-    body.dark #contactModal > div {
-      background: var(--color-bg-dark-end);
-      color: var(--color-text-dark);
-      box-shadow: 0 12px 48px var(--shadow-dark);
-    }
-
-    #closeContact {
+    /* Bolinhas de fundo */
+    .gradient-ball {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: inherit;
-      font-weight: 700;
-      line-height: 1;
-      padding: 0;
-      transition: color 0.3s ease;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.5;
+      z-index: 0;
+      animation: float 20s ease-in-out infinite alternate;
+    }
+    .ball1 { width: 400px; height: 400px; background: radial-gradient(circle, #6d28d9, transparent); top: -100px; left: -100px; }
+    .ball2 { width: 300px; height: 300px; background: radial-gradient(circle, #9333ea, transparent); bottom: -100px; right: -50px; }
+    .ball3 { width: 250px; height: 250px; background: radial-gradient(circle, #3b82f6, transparent); top: 40%; left: 70%; }
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(30px) translateX(20px); }
+      100% { transform: translateY(0px) translateX(0px); }
     }
 
-    #contactModal form input,
-    #contactModal form textarea {
-      width: 100%;
-      padding: 14px 16px;
-      margin-bottom: 18px;
-      border-radius: var(--radius);
-      border: 1.8px solid #ddd;
-      font-size: 1rem;
-      background: #fff;
-    }
-
-    #contactModal form button {
-      width: 100%;
-      background: var(--color-primary);
-      color: white;
-      padding: 16px 0;
-      border: none;
-      border-radius: var(--radius);
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 1.2rem;
-    }
+    /* Animação de fade-in */
+    .fade-in-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in-up.appear { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo">Moduly</div>
-    <nav>
-      <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#equipe">Equipe</a>
-      <a href="#contato">Contato</a>
-      <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+<body class="relative">
+
+  <!-- Bolinhas de gradiente -->
+  <div class="gradient-ball ball1"></div>
+  <div class="gradient-ball ball2"></div>
+  <div class="gradient-ball ball3"></div>
+
+  <!-- Header Fixo Clean -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-black/20 backdrop-blur-md transition-all duration-300">
+    <h1 class="text-2xl font-bold text-purple-400">Moduly</h1>
+    <nav class="space-x-6">
+      <a href="#servicos" class="hover:text-purple-300 transition text-lg">Serviços</a>
+      <a href="#portfolio" class="hover:text-purple-300 transition text-lg">Portfólio</a>
+      <a href="#sobre" class="hover:text-purple-300 transition text-lg">Sobre</a>
+      <a href="#contato" class="hover:text-purple-300 transition text-lg contact-link">Contato</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-text" data-aos="fade-up">
-        Desenvolvemos com simplicidade e impacto.<br />
-        Sites e sistemas para quem quer se destacar.
+  <!-- Hero -->
+  <section class="relative z-10 flex flex-col items-center text-center py-32 px-6">
+    <h2 class="fade-in-up text-5xl md:text-7xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+      Transformando ideias em soluções digitais
+    </h2>
+    <p class="fade-in-up max-w-3xl mb-10 text-gray-300 text-lg md:text-xl">
+      A <span class="text-purple-400">Moduly</span> ajuda empresas sem área de TI a crescerem com sites modernos, suporte dedicado e soluções sob medida.
+    </p>
+    <button class="fade-in-up bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-medium shadow-xl text-lg transition contact-link">
+      Fale Conosco
+    </button>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="relative z-10 py-32 px-6">
+    <h3 class="fade-in-up text-4xl md:text-5xl font-bold text-center mb-20 text-purple-300">Nossos Serviços</h3>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="fade-in-up bg-white/5 p-10 rounded-3xl shadow-lg hover:shadow-purple-500/50 transition transform hover:scale-105 min-h-[300px]">
+        <h4 class="text-2xl md:text-3xl font-semibold mb-5 text-purple-400">Desenvolvimento Web</h4>
+        <p class="text-gray-300 text-lg md:text-xl">Sites modernos, responsivos e rápidos para destacar sua empresa no mundo digital.</p>
       </div>
-    </section>
-
-    <section id="servicos" data-aos="fade-up">
-      <h2>Serviços</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="https://img.icons8.com/ios/48/laptop-coding.png" />
-          <h3>Websites</h3>
-          <p>Sites modernos e responsivos para todos os dispositivos.</p>
-        </article>
-        <article class="card">
-          <img src="https://img.icons8.com/ios/48/idea.png" />
-          <h3>Design</h3>
-          <p>Interfaces limpas e criativas com foco em usabilidade.</p>
-        </article>
-        <article class="card">
-          <img src="https://img.icons8.com/ios/48/cloud.png" />
-          <h3>Sistemas</h3>
-          <p>Soluções eficientes para automatizar processos.</p>
-        </article>
+      <div class="fade-in-up bg-white/5 p-10 rounded-3xl shadow-lg hover:shadow-purple-500/50 transition transform hover:scale-105 min-h-[300px]">
+        <h4 class="text-2xl md:text-3xl font-semibold mb-5 text-purple-400">Suporte Técnico</h4>
+        <p class="text-gray-300 text-lg md:text-xl">Cuidamos da parte técnica para que você foque apenas no seu negócio.</p>
       </div>
-    </section>
-
-    <section id="sobre" data-aos="fade-up">
-      <h2>Sobre o Projeto</h2>
-      <p>Moduly é um projeto que oferece soluções tecnológicas como sites e sistemas personalizados para empresas que não possuem setor de TI.</p>
-    </section>
-
-    <section id="equipe" data-aos="fade-up">
-      <h2>Equipe</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" class="team-photo" />
-          <h3>Gustavo</h3>
-          <p>UI/UX & Frontend</p>
-        </article>
-        <article class="card">
-          <img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" class="team-photo" />
-          <h3>Gustavo</h3>
-          <p>Backend & Banco de Dados</p>
-        </article>
-        <article class="card">
-          <img src="https://media.giphy.com/media/3o7TKxOHtKDQh2zjEA/giphy.gif" class="team-photo" />
-          <h3>Gustavo</h3>
-          <p>Gestão de Projetos</p>
-        </article>
+      <div class="fade-in-up bg-white/5 p-10 rounded-3xl shadow-lg hover:shadow-purple-500/50 transition transform hover:scale-105 min-h-[300px]">
+        <h4 class="text-2xl md:text-3xl font-semibold mb-5 text-purple-400">Consultoria Digital</h4>
+        <p class="text-gray-300 text-lg md:text-xl">Planejamento estratégico para transformar sua presença online em resultados.</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <button id="openContact">✉️</button>
+  <!-- Portfólio -->
+  <section id="portfolio" class="relative z-10 py-32 px-6 bg-transparent">
+    <h3 class="fade-in-up text-4xl md:text-5xl font-bold mb-20 text-purple-300 text-center">Portfólio</h3>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="fade-in-up bg-white/5 p-6 rounded-3xl shadow-lg hover:shadow-purple-500/50 transition transform hover:scale-105 min-h-[380px]">
+        <img src="https://picsum.photos/500/350?random=21" class="rounded-2xl mb-6 w-full object-cover h-72 md:h-80" />
+        <h4 class="text-2xl md:text-3xl font-semibold mb-3 text-purple-400">Loja Virtual</h4>
+        <p class="text-gray-300 text-lg md:text-xl">E-commerce moderno, rápido e responsivo, integrado a pagamentos online.</p>
+      </div>
+      <div class="fade-in-up bg-white/5 p-6 rounded-3xl shadow-lg hover:shadow-purple-500/50 transition transform hover:scale-105 min-h-[380px]">
+        <img src="https://picsum.photos/500/350?random=22" class="rounded-2xl mb-6 w-full object-cover h-72 md:h-80" />
+        <h4 class="text-2xl md:text-3xl font-semibold mb-3 text-purple-400">Site Corporativo</h4>
+        <p class="text-gray-300 text-lg md:text-xl">Página institucional moderna que transmite confiança e credibilidade.</p>
+      </div>
+      <div class="fade-in-up bg-white/5 p-6 rounded-3xl shadow-lg hover:shadow-purple-500/50 transition transform hover:scale-105 min-h-[380px]">
+        <img src="https://picsum.photos/500/350?random=23" class="rounded-2xl mb-6 w-full object-cover h-72 md:h-80" />
+        <h4 class="text-2xl md:text-3xl font-semibold mb-3 text-purple-400">Landing Page</h4>
+        <p class="text-gray-300 text-lg md:text-xl">Landing pages de alta conversão para campanhas de marketing digital.</p>
+      </div>
+    </div>
+  </section>
 
-  <div id="contactModal">
-    <div>
-      <button id="closeContact">&times;</button>
-      <h2>Fale Conosco</h2>
-      <form>
-        <input type="text" name="name" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu email" required />
-        <textarea name="message" placeholder="Sua mensagem" rows="4" required></textarea>
-        <button type="submit">Enviar</button>
+  <!-- Sobre -->
+  <section id="sobre" class="relative z-10 py-32 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="fade-in-up text-4xl md:text-5xl font-bold mb-6 text-purple-300">Sobre a Moduly</h3>
+      <p class="fade-in-up text-gray-300 text-lg md:text-xl leading-relaxed">
+        Somos uma equipe apaixonada por tecnologia que acredita que toda empresa merece ter uma presença digital marcante.
+        Na <span class="text-purple-400">Moduly</span>, entregamos soluções modernas, acessíveis e de alta qualidade.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 text-center py-6 text-gray-400 text-sm mt-12">
+    © 2025 Moduly. Todos os direitos reservados.
+  </footer>
+
+  <!-- Botão Flutuante Fale Conosco -->
+  <button id="openContactModal" 
+     class="fixed bottom-8 right-8 z-50 bg-purple-600 hover:bg-purple-700 text-white px-6 py-4 rounded-full shadow-xl flex items-center gap-2 transition-all duration-300 hover:scale-110 text-lg contact-link">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10l-9 6-9-6 9-6 9 6z" />
+    </svg>
+    Fale Conosco
+  </button>
+
+  <!-- Modal de Contato -->
+  <div id="contactModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center">
+    <div class="bg-white/5 backdrop-blur-md rounded-3xl max-w-4xl w-full p-8 relative">
+      <button id="closeModal" class="absolute top-4 right-4 text-purple-400 hover:text-purple-200 text-xl font-bold">&times;</button>
+      <h3 class="text-3xl md:text-4xl font-bold mb-4 text-purple-300 text-center">Entre em Contato</h3>
+      <p class="text-gray-300 mb-6 text-center max-w-lg mx-auto text-lg">
+        Queremos ouvir sobre seu projeto! Preencha o formulário abaixo e nossa equipe entrará em contato rapidamente.
+      </p>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" placeholder="Seu nome" class="p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white w-full text-lg" />
+        <input type="email" placeholder="Seu email" class="p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white w-full text-lg" />
+        <textarea placeholder="Sua mensagem" rows="5" class="p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white md:col-span-2 w-full text-lg"></textarea>
+        <button class="md:col-span-2 bg-purple-600 hover:bg-purple-700 py-4 rounded-xl font-medium shadow-lg transition w-full text-lg">
+          Enviar Mensagem
+        </button>
       </form>
     </div>
   </div>
 
-  <footer style="padding:16px 32px; text-align:center; color:var(--color-muted-light); font-size:0.9rem;">
-    &copy; 2025 Moduly. Todos os direitos reservados.
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Script de Animação, Modal e Header Scroll -->
   <script>
-    AOS.init({ duration: 700, once: true, easing: "ease-out-cubic" });
+    // Animação Fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('appear');
+        else entry.target.classList.remove('appear');
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-    }
+    // Modal Contato
+    const modal = document.getElementById('contactModal');
+    const closeBtn = document.getElementById('closeModal');
+    const contactLinks = document.querySelectorAll('.contact-link');
 
-    const openBtn = document.getElementById("openContact");
-    const modal = document.getElementById("contactModal");
-    const closeBtn = document.getElementById("closeContact");
+    contactLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+      });
+    });
 
-    openBtn.addEventListener("click", () => modal.classList.add("active"));
-    closeBtn.addEventListener("click", () => modal.classList.remove("active"));
-    modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("active"); });
-    modal.querySelector("form").addEventListener("submit", e => {
-      e.preventDefault();
-      alert("Mensagem enviada com sucesso!");
-      modal.classList.remove("active");
-      e.target.reset();
+    closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    window.addEventListener('click', (e) => { if(e.target === modal) modal.classList.add('hidden'); });
+
+    // Header Scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50){
+        header.classList.add('bg-black/70', 'backdrop-blur-md', 'shadow-lg');
+      } else {
+        header.classList.remove('bg-black/70', 'backdrop-blur-md', 'shadow-lg');
+      }
     });
   </script>
+
 </body>
 </html>
