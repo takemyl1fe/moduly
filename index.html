@@ -3,14 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moduly - Desenvolvimento & Suporte TI</title>
+  <meta name="description" content="Desenvolvimento de sites profissionais e suporte TI completo para empresas. Soluções digitais simples, rápidas e acessíveis. Transforme sua presença online." />
+  <meta name="keywords" content="desenvolvimento web, criação de sites, suporte TI, sites empresariais, landing pages, e-commerce, sistema web" />
+  <meta name="author" content="Moduly" />
+  <meta name="theme-color" content="#9333ea" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moduly.com.br/" />
+  <meta property="og:title" content="Moduly - Desenvolvimento Web & Suporte TI" />
+  <meta property="og:description" content="Sites profissionais e suporte completo para empresas. Simples, rápido e acessível." />
+  <meta property="og:image" content="https://moduly.com.br/og-image.jpg" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://moduly.com.br/" />
+  <meta property="twitter:title" content="Moduly - Desenvolvimento Web & Suporte TI" />
+  <meta property="twitter:description" content="Sites profissionais e suporte completo para empresas." />
+  <meta property="twitter:image" content="https://moduly.com.br/og-image.jpg" />
+  
+  <title>Moduly - Desenvolvimento Web & Suporte TI | Sites Profissionais</title>
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://picsum.photos" />
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+  
+  <link rel="preload" as="script" href="https://cdn.tailwindcss.com" />
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Moduly",
+    "description": "Desenvolvimento de sites profissionais e suporte TI completo",
+    "url": "https://moduly.com.br",
+    "logo": "https://moduly.com.br/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "availableLanguage": ["Portuguese"]
+    },
+    "sameAs": [
+      "https://facebook.com/moduly",
+      "https://instagram.com/moduly"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "offerCount": "3",
+      "offers": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Desenvolvimento de Sites",
+            "description": "Sites modernos e otimizados que atraem clientes"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suporte TI",
+            "description": "Suporte técnico completo para empresas"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Estratégia Digital",
+            "description": "Planejamento personalizado para crescimento digital"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  
   <style>
     body {
       background: radial-gradient(circle at top left, #1a1a2e, #0f0f1f 70%);
       color: #fff;
       overflow-x: hidden;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     /* Bolinhas de fundo - Otimizadas */
@@ -94,6 +172,37 @@
     /* Otimizações para imagens */
     img {
       content-visibility: auto;
+      image-rendering: crisp-edges;
+    }
+
+    /* Reduzir repaints */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Otimizar scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Lazy loading visual */
+    img[loading="lazy"] {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Loading spinner */
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #9333ea;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     /* Desabilitar animações em dispositivos com preferência */
@@ -104,31 +213,55 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* Focus styles para acessibilidade */
+    *:focus-visible {
+      outline: 2px solid #9333ea;
+      outline-offset: 2px;
+    }
+
+    /* Skip to content link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #9333ea;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
   </style>
 </head>
 <body class="relative">
 
+  <!-- Skip to content para acessibilidade -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
   <!-- Bolinhas de gradiente -->
-  <div class="gradient-ball ball1"></div>
-  <div class="gradient-ball ball2"></div>
-  <div class="gradient-ball ball3"></div>
+  <div class="gradient-ball ball1" aria-hidden="true"></div>
+  <div class="gradient-ball ball2" aria-hidden="true"></div>
+  <div class="gradient-ball ball3" aria-hidden="true"></div>
 
   <!-- Header Fixo Responsivo -->
-  <header id="header" class="fixed top-0 left-0 w-full z-50 px-4 sm:px-8 py-3 sm:py-4 bg-black/20 backdrop-blur-md smooth-transition">
+  <header id="header" class="fixed top-0 left-0 w-full z-50 px-4 sm:px-8 py-3 sm:py-4 bg-black/20 backdrop-blur-md smooth-transition" role="banner">
     <div class="flex justify-between items-center max-w-7xl mx-auto">
       <h1 class="text-xl sm:text-2xl font-bold text-purple-400">Moduly</h1>
       
       <!-- Menu Desktop -->
-      <nav class="hidden md:flex space-x-4 lg:space-x-6">
-        <a href="#servicos" class="hover:text-purple-300 smooth-transition text-base lg:text-lg">Serviços</a>
-        <a href="#portfolio" class="hover:text-purple-300 smooth-transition text-base lg:text-lg">Portfólio</a>
-        <a href="#sobre" class="hover:text-purple-300 smooth-transition text-base lg:text-lg">Sobre</a>
-        <a href="#contato" class="hover:text-purple-300 smooth-transition text-base lg:text-lg contact-link">Contato</a>
+      <nav class="hidden md:flex space-x-4 lg:space-x-6" role="navigation" aria-label="Menu principal">
+        <a href="#servicos" class="hover:text-purple-300 smooth-transition text-base lg:text-lg" aria-label="Ver serviços">Serviços</a>
+        <a href="#portfolio" class="hover:text-purple-300 smooth-transition text-base lg:text-lg" aria-label="Ver portfólio">Portfólio</a>
+        <a href="#sobre" class="hover:text-purple-300 smooth-transition text-base lg:text-lg" aria-label="Sobre nós">Sobre</a>
+        <a href="#contato" class="hover:text-purple-300 smooth-transition text-base lg:text-lg contact-link" aria-label="Entrar em contato">Contato</a>
       </nav>
 
       <!-- Botão Menu Mobile -->
-      <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
@@ -136,11 +269,11 @@
   </header>
 
   <!-- Menu Mobile Lateral -->
-  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-black/95 backdrop-blur-md z-50 md:hidden">
+  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-black/95 backdrop-blur-md z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Menu mobile">
     <div class="flex justify-end p-4">
-      <button id="closeMobileMenu" class="text-white text-2xl">&times;</button>
+      <button id="closeMobileMenu" class="text-white text-2xl" aria-label="Fechar menu">&times;</button>
     </div>
-    <nav class="flex flex-col space-y-6 px-8 py-4">
+    <nav class="flex flex-col space-y-6 px-8 py-4" role="navigation">
       <a href="#servicos" class="hover:text-purple-300 smooth-transition text-lg mobile-nav-link">Serviços</a>
       <a href="#portfolio" class="hover:text-purple-300 smooth-transition text-lg mobile-nav-link">Portfólio</a>
       <a href="#sobre" class="hover:text-purple-300 smooth-transition text-lg mobile-nav-link">Sobre</a>
@@ -148,255 +281,275 @@
     </nav>
   </div>
 
-  <!-- Hero -->
-  <section class="relative z-10 flex flex-col items-center text-center py-24 sm:py-32 px-4 sm:px-6 mt-16 sm:mt-0">
-    <h2 class="fade-in-up text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 leading-tight">
-      Sua empresa merece estar online
-    </h2>
-    <p class="fade-in-up max-w-3xl mb-8 sm:mb-10 text-gray-300 text-base sm:text-lg md:text-xl px-4">
-      Criamos sites profissionais e oferecemos suporte completo para empresas que não têm equipe de TI. 
-      <span class="text-purple-400 font-semibold">Simples, rápido e acessível.</span>
-    </p>
-    <button class="fade-in-up bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium shadow-xl text-base sm:text-lg smooth-transition contact-link">
-      Começar Agora
-    </button>
-  </section>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="relative z-10 flex flex-col items-center text-center py-24 sm:py-32 px-4 sm:px-6 mt-16 sm:mt-0" aria-labelledby="hero-title">
+      <h2 id="hero-title" class="fade-in-up text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 leading-tight">
+        Sua empresa merece estar online
+      </h2>
+      <p class="fade-in-up max-w-3xl mb-8 sm:mb-10 text-gray-300 text-base sm:text-lg md:text-xl px-4">
+        Criamos sites profissionais e oferecemos suporte completo para empresas que não têm equipe de TI. 
+        <span class="text-purple-400 font-semibold">Simples, rápido e acessível.</span>
+      </p>
+      <button class="fade-in-up bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium shadow-xl text-base sm:text-lg smooth-transition contact-link" aria-label="Começar agora">
+        Começar Agora
+      </button>
+    </section>
 
-  <!-- Serviços -->
-  <section id="servicos" class="relative z-10 py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
-    <h3 class="fade-in-up text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-20 text-purple-300">Como Ajudamos Seu Negócio</h3>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
-      <div class="fade-in-up bg-white/5 p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-purple-500/50 smooth-transition hover:scale-105">
-        <div class="text-4xl mb-4">🚀</div>
-        <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-5 text-purple-400">Sites que Vendem</h4>
-        <p class="text-gray-300 text-base sm:text-lg md:text-xl">Desenvolvemos sites modernos e otimizados que atraem clientes e geram resultados reais para seu negócio.</p>
+    <!-- Serviços -->
+    <section id="servicos" class="relative z-10 py-16 sm:py-24 lg:py-32 px-4 sm:px-6" aria-labelledby="services-title">
+      <h3 id="services-title" class="fade-in-up text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-20 text-purple-300">Como Ajudamos Seu Negócio</h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
+        <article class="fade-in-up bg-white/5 p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-purple-500/50 smooth-transition hover:scale-105">
+          <div class="text-4xl mb-4" aria-hidden="true">🚀</div>
+          <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-5 text-purple-400">Sites que Vendem</h4>
+          <p class="text-gray-300 text-base sm:text-lg md:text-xl">Desenvolvemos sites modernos e otimizados que atraem clientes e geram resultados reais para seu negócio.</p>
+        </article>
+        <article class="fade-in-up bg-white/5 p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-purple-500/50 smooth-transition hover:scale-105">
+          <div class="text-4xl mb-4" aria-hidden="true">🛡️</div>
+          <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-5 text-purple-400">Suporte Sempre Presente</h4>
+          <p class="text-gray-300 text-base sm:text-lg md:text-xl">Não entende de tecnologia? Sem problema. Cuidamos de tudo enquanto você foca no que faz de melhor.</p>
+        </article>
+        <article class="fade-in-up bg-white/5 p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-purple-500/50 smooth-transition hover:scale-105 sm:col-span-2 md:col-span-1">
+          <div class="text-4xl mb-4" aria-hidden="true">💡</div>
+          <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-5 text-purple-400">Estratégia Digital</h4>
+          <p class="text-gray-300 text-base sm:text-lg md:text-xl">Planejamento personalizado para levar sua empresa ao próximo nível no ambiente digital.</p>
+        </article>
       </div>
-      <div class="fade-in-up bg-white/5 p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-purple-500/50 smooth-transition hover:scale-105">
-        <div class="text-4xl mb-4">🛡️</div>
-        <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-5 text-purple-400">Suporte Sempre Presente</h4>
-        <p class="text-gray-300 text-base sm:text-lg md:text-xl">Não entende de tecnologia? Sem problema. Cuidamos de tudo enquanto você foca no que faz de melhor.</p>
-      </div>
-      <div class="fade-in-up bg-white/5 p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-purple-500/50 smooth-transition hover:scale-105 sm:col-span-2 md:col-span-1">
-        <div class="text-4xl mb-4">💡</div>
-        <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-5 text-purple-400">Estratégia Digital</h4>
-        <p class="text-gray-300 text-base sm:text-lg md:text-xl">Planejamento personalizado para levar sua empresa ao próximo nível no ambiente digital.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Portfólio -->
-  <section id="portfolio" class="relative z-10 py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-transparent">
-    <h3 class="fade-in-up text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-purple-300 text-center">Projetos que Fizemos Acontecer</h3>
-    <p class="fade-in-up text-center text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-12 sm:mb-16">
-      De pequenas empresas a grandes ideias. Veja como transformamos visões em realidade digital.
-    </p>
-    
-    <!-- Portfolio Grid Criativo -->
-    <div class="max-w-7xl mx-auto">
-      <!-- Projeto Destaque Principal -->
-      <div class="fade-in-up mb-8 sm:mb-12">
-        <div class="relative group overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900/40 to-blue-900/40 p-1">
-          <div class="bg-black/40 backdrop-blur-sm rounded-3xl overflow-hidden">
-            <div class="grid md:grid-cols-2 gap-0">
-              <div class="relative h-64 sm:h-80 md:h-96 overflow-hidden">
-                <img src="https://picsum.photos/800/600?random=21" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Projeto E-commerce Premium" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
-              <div class="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
-                <span class="text-purple-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">E-commerce</span>
-                <h4 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">Loja Virtual Premium</h4>
-                <p class="text-gray-300 text-base sm:text-lg mb-6 leading-relaxed">
-                  Plataforma completa de vendas online com sistema de pagamento integrado, gestão de estoque e painel administrativo intuitivo. 
-                  Resultado: <span class="text-purple-400 font-semibold">+150% em vendas online</span> nos primeiros 3 meses.
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs sm:text-sm">Responsivo</span>
-                  <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs sm:text-sm">Pagamentos</span>
-                  <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs sm:text-sm">SEO</span>
+    <!-- Portfólio -->
+    <section id="portfolio" class="relative z-10 py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-transparent" aria-labelledby="portfolio-title">
+      <h3 id="portfolio-title" class="fade-in-up text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-purple-300 text-center">Projetos que Fizemos Acontecer</h3>
+      <p class="fade-in-up text-center text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-12 sm:mb-16">
+        De pequenas empresas a grandes ideias. Veja como transformamos visões em realidade digital.
+      </p>
+      
+      <!-- Portfolio Grid Criativo -->
+      <div class="max-w-7xl mx-auto">
+        <!-- Projeto Destaque Principal -->
+        <article class="fade-in-up mb-8 sm:mb-12">
+          <div class="relative group overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900/40 to-blue-900/40 p-1">
+            <div class="bg-black/40 backdrop-blur-sm rounded-3xl overflow-hidden">
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="relative h-64 sm:h-80 md:h-96 overflow-hidden">
+                  <img src="https://picsum.photos/800/600?random=21" loading="lazy" width="800" height="600" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Projeto E-commerce Premium - Loja Virtual" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div class="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
+                  <span class="text-purple-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">E-commerce</span>
+                  <h4 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">Loja Virtual Premium</h4>
+                  <p class="text-gray-300 text-base sm:text-lg mb-6 leading-relaxed">
+                    Plataforma completa de vendas online com sistema de pagamento integrado, gestão de estoque e painel administrativo intuitivo. 
+                    Resultado: <span class="text-purple-400 font-semibold">+150% em vendas online</span> nos primeiros 3 meses.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs sm:text-sm">Responsivo</span>
+                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs sm:text-sm">Pagamentos</span>
+                    <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs sm:text-sm">SEO</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </article>
+
+        <!-- Grid de Projetos Secundários -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Projeto 2 -->
+          <article class="fade-in-up group">
+            <div class="relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 smooth-transition">
+              <div class="relative h-48 sm:h-56 overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=22" loading="lazy" width="600" height="400" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Site Corporativo Institucional" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <span class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Institucional</span>
+                  <h4 class="text-xl sm:text-2xl font-bold text-white mb-2">Site Corporativo</h4>
+                </div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <p class="text-gray-300 text-sm sm:text-base mb-4">
+                  Website institucional elegante com área de blog, portfólio interativo e formulários de contato.
+                </p>
+                <button class="flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 smooth-transition project-detail-btn" data-project="2" aria-label="Ver detalhes do site corporativo">
+                  <span>Ver detalhes</span>
+                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 3 -->
+          <article class="fade-in-up group">
+            <div class="relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 smooth-transition">
+              <div class="relative h-48 sm:h-56 overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=23" loading="lazy" width="600" height="400" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Landing Page de Marketing" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <span class="text-pink-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Marketing</span>
+                  <h4 class="text-xl sm:text-2xl font-bold text-white mb-2">Landing Page Pro</h4>
+                </div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <p class="text-gray-300 text-sm sm:text-base mb-4">
+                  Página de conversão otimizada para campanhas de anúncios com formulário e analytics integrados.
+                </p>
+                <button class="flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 smooth-transition project-detail-btn" data-project="3" aria-label="Ver detalhes da landing page">
+                  <span>Ver detalhes</span>
+                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 4 -->
+          <article class="fade-in-up group sm:col-span-2 lg:col-span-1">
+            <div class="relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 smooth-transition">
+              <div class="relative h-48 sm:h-56 overflow-hidden">
+                <img src="https://picsum.photos/600/400?random=24" loading="lazy" width="600" height="400" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Sistema Web de Gestão" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <span class="text-green-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Aplicação</span>
+                  <h4 class="text-xl sm:text-2xl font-bold text-white mb-2">Sistema de Gestão</h4>
+                </div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <p class="text-gray-300 text-sm sm:text-base mb-4">
+                  Dashboard completo para gerenciar clientes, vendas e relatórios em tempo real.
+                </p>
+                <button class="flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 smooth-transition project-detail-btn" data-project="4" aria-label="Ver detalhes do sistema de gestão">
+                  <span>Ver detalhes</span>
+                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- CTA Final do Portfolio -->
+        <div class="fade-in-up mt-12 sm:mt-16 text-center">
+          <p class="text-gray-400 text-base sm:text-lg mb-6">Seu projeto pode ser o próximo aqui</p>
+          <button class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-medium shadow-xl smooth-transition contact-link" aria-label="Entrar em contato">
+            Vamos Conversar
+          </button>
         </div>
       </div>
+    </section>
 
-      <!-- Grid de Projetos Secundários -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <!-- Projeto 2 -->
-        <div class="fade-in-up group">
-          <div class="relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 smooth-transition">
-            <div class="relative h-48 sm:h-56 overflow-hidden">
-              <img src="https://picsum.photos/600/400?random=22" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Site Corporativo" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Institucional</span>
-                <h4 class="text-xl sm:text-2xl font-bold text-white mb-2">Site Corporativo</h4>
-              </div>
-            </div>
-            <div class="p-5 sm:p-6">
-              <p class="text-gray-300 text-sm sm:text-base mb-4">
-                Website institucional elegante com área de blog, portfólio interativo e formulários de contato.
-              </p>
-              <button class="flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 smooth-transition project-detail-btn" data-project="2">
-                <span>Ver detalhes</span>
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projeto 3 -->
-        <div class="fade-in-up group">
-          <div class="relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 smooth-transition">
-            <div class="relative h-48 sm:h-56 overflow-hidden">
-              <img src="https://picsum.photos/600/400?random=23" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Landing Page" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="text-pink-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Marketing</span>
-                <h4 class="text-xl sm:text-2xl font-bold text-white mb-2">Landing Page Pro</h4>
-              </div>
-            </div>
-            <div class="p-5 sm:p-6">
-              <p class="text-gray-300 text-sm sm:text-base mb-4">
-                Página de conversão otimizada para campanhas de anúncios com formulário e analytics integrados.
-              </p>
-              <button class="flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 smooth-transition project-detail-btn" data-project="3">
-                <span>Ver detalhes</span>
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projeto 4 -->
-        <div class="fade-in-up group sm:col-span-2 lg:col-span-1">
-          <div class="relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 smooth-transition">
-            <div class="relative h-48 sm:h-56 overflow-hidden">
-              <img src="https://picsum.photos/600/400?random=24" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 smooth-transition" alt="Sistema Web" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="text-green-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Aplicação</span>
-                <h4 class="text-xl sm:text-2xl font-bold text-white mb-2">Sistema de Gestão</h4>
-              </div>
-            </div>
-            <div class="p-5 sm:p-6">
-              <p class="text-gray-300 text-sm sm:text-base mb-4">
-                Dashboard completo para gerenciar clientes, vendas e relatórios em tempo real.
-              </p>
-              <button class="flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 smooth-transition project-detail-btn" data-project="4">
-                <span>Ver detalhes</span>
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA Final do Portfolio -->
-      <div class="fade-in-up mt-12 sm:mt-16 text-center">
-        <p class="text-gray-400 text-base sm:text-lg mb-6">Seu projeto pode ser o próximo aqui</p>
-        <button class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-medium shadow-xl smooth-transition contact-link">
-          Vamos Conversar
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sobre -->
-  <section id="sobre" class="relative z-10 py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-        <div class="fade-in-up">
-          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-purple-300">Por que Escolher a Moduly?</h3>
-          <p class="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mb-6">
-            Entendemos que nem toda empresa tem uma equipe de TI. Por isso, simplificamos tudo para você.
-          </p>
-          <p class="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mb-8">
-            Somos especialistas em trabalhar com pequenas e médias empresas que querem <span class="text-purple-400 font-semibold">crescer no digital sem complicação</span>.
-          </p>
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <div class="text-purple-400 text-2xl">✓</div>
-              <div>
-                <h4 class="text-white font-semibold text-base sm:text-lg mb-1">Comunicação Clara</h4>
-                <p class="text-gray-400 text-sm sm:text-base">Sem jargões técnicos, explicamos tudo de forma simples.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="text-purple-400 text-2xl">✓</div>
-              <div>
-                <h4 class="text-white font-semibold text-base sm:text-lg mb-1">Preços Acessíveis</h4>
-                <p class="text-gray-400 text-sm sm:text-base">Soluções de qualidade que cabem no seu orçamento.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="text-purple-400 text-2xl">✓</div>
-              <div>
-                <h4 class="text-white font-semibold text-base sm:text-lg mb-1">Suporte Humanizado</h4>
-                <p class="text-gray-400 text-sm sm:text-base">Nossa equipe está sempre disponível quando você precisar.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="fade-in-up">
-          <div class="bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl p-6 sm:p-8 backdrop-blur-sm border border-purple-500/30">
-            <div class="text-center mb-6">
-              <div class="text-5xl sm:text-6xl mb-4">🎯</div>
-              <h4 class="text-2xl sm:text-3xl font-bold text-white mb-2">Nossa Missão</h4>
-            </div>
-            <p class="text-gray-300 text-base sm:text-lg leading-relaxed text-center">
-              Democratizar a tecnologia e fazer com que <span class="text-purple-400 font-semibold">toda empresa</span>, independente do tamanho, 
-              tenha acesso a soluções digitais profissionais e de qualidade.
+    <!-- Sobre -->
+    <section id="sobre" class="relative z-10 py-16 sm:py-24 lg:py-32 px-4 sm:px-6" aria-labelledby="about-title">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <div class="fade-in-up">
+            <h3 id="about-title" class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-purple-300">Por que Escolher a Moduly?</h3>
+            <p class="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mb-6">
+              Entendemos que nem toda empresa tem uma equipe de TI. Por isso, simplificamos tudo para você.
             </p>
+            <p class="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mb-8">
+              Somos especialistas em trabalhar com pequenas e médias empresas que querem <span class="text-purple-400 font-semibold">crescer no digital sem complicação</span>.
+            </p>
+            <ul class="space-y-4" role="list">
+              <li class="flex items-start gap-3">
+                <div class="text-purple-400 text-2xl" aria-hidden="true">✓</div>
+                <div>
+                  <h4 class="text-white font-semibold text-base sm:text-lg mb-1">Comunicação Clara</h4>
+                  <p class="text-gray-400 text-sm sm:text-base">Sem jargões técnicos, explicamos tudo de forma simples.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="text-purple-400 text-2xl" aria-hidden="true">✓</div>
+                <div>
+                  <h4 class="text-white font-semibold text-base sm:text-lg mb-1">Preços Acessíveis</h4>
+                  <p class="text-gray-400 text-sm sm:text-base">Soluções de qualidade que cabem no seu orçamento.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="text-purple-400 text-2xl" aria-hidden="true">✓</div>
+                <div>
+                  <h4 class="text-white font-semibold text-base sm:text-lg mb-1">Suporte Humanizado</h4>
+                  <p class="text-gray-400 text-sm sm:text-base">Nossa equipe está sempre disponível quando você precisar.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="fade-in-up">
+            <div class="bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl p-6 sm:p-8 backdrop-blur-sm border border-purple-500/30">
+              <div class="text-center mb-6">
+                <div class="text-5xl sm:text-6xl mb-4" aria-hidden="true">🎯</div>
+                <h4 class="text-2xl sm:text-3xl font-bold text-white mb-2">Nossa Missão</h4>
+              </div>
+              <p class="text-gray-300 text-base sm:text-lg leading-relaxed text-center">
+                Democratizar a tecnologia e fazer com que <span class="text-purple-400 font-semibold">toda empresa</span>, independente do tamanho, 
+                tenha acesso a soluções digitais profissionais e de qualidade.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="relative z-10 text-center py-6 text-gray-400 text-sm mt-12 px-4">
-    © 2025 Moduly. Todos os direitos reservados.
+  <footer class="relative z-10 text-center py-6 text-gray-400 text-sm mt-12 px-4" role="contentinfo">
+    <p>© 2025 Moduly. Todos os direitos reservados.</p>
   </footer>
 
   <!-- Botão Flutuante Fale Conosco -->
   <button id="openContactModal" 
-     class="fixed bottom-6 right-6 z-50 bg-purple-600 hover:bg-purple-700 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full shadow-xl flex items-center gap-2 smooth-transition hover:scale-110 text-sm sm:text-base lg:text-lg contact-link">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+     class="fixed bottom-6 right-6 z-50 bg-purple-600 hover:bg-purple-700 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full shadow-xl flex items-center gap-2 smooth-transition hover:scale-110 text-sm sm:text-base lg:text-lg contact-link"
+     aria-label="Abrir formulário de contato">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     </svg>
     <span class="hidden sm:inline">Fale Conosco</span>
   </button>
 
   <!-- Modal de Contato -->
-  <div id="contactModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+  <div id="contactModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
     <div class="bg-white/5 backdrop-blur-md rounded-2xl sm:rounded-3xl max-w-4xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
-      <button id="closeModal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-purple-400 hover:text-purple-200 text-2xl sm:text-3xl font-bold">&times;</button>
-      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-purple-300 text-center">Vamos Criar Algo Incrível Juntos?</h3>
+      <button id="closeModal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-purple-400 hover:text-purple-200 text-2xl sm:text-3xl font-bold" aria-label="Fechar modal de contato">&times;</button>
+      <h3 id="contact-modal-title" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-purple-300 text-center">Vamos Criar Algo Incrível Juntos?</h3>
       <p class="text-gray-300 mb-6 text-center max-w-lg mx-auto text-sm sm:text-base lg:text-lg px-4">
         Conte-nos sobre seu projeto e vamos encontrar a melhor solução para o seu negócio. Resposta em até 24h!
       </p>
-      <form class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        <input type="text" placeholder="Seu nome" class="p-3 sm:p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white w-full text-sm sm:text-base lg:text-lg" />
-        <input type="email" placeholder="Seu email" class="p-3 sm:p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white w-full text-sm sm:text-base lg:text-lg" />
-        <textarea placeholder="Sua mensagem" rows="5" class="p-3 sm:p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white md:col-span-2 w-full text-sm sm:text-base lg:text-lg"></textarea>
-        <button type="submit" class="md:col-span-2 bg-purple-600 hover:bg-purple-700 py-3 sm:py-4 rounded-xl font-medium shadow-lg smooth-transition w-full text-sm sm:text-base lg:text-lg">
+      <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" aria-label="Formulário de contato">
+        <div class="md:col-span-1">
+          <label for="contact-name" class="sr-only">Seu nome</label>
+          <input type="text" id="contact-name" name="name" placeholder="Seu nome" required 
+                 class="p-3 sm:p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white w-full text-sm sm:text-base lg:text-lg" 
+                 aria-required="true" />
+        </div>
+        <div class="md:col-span-1">
+          <label for="contact-email" class="sr-only">Seu email</label>
+          <input type="email" id="contact-email" name="email" placeholder="Seu email" required 
+                 class="p-3 sm:p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white w-full text-sm sm:text-base lg:text-lg"
+                 aria-required="true" />
+        </div>
+        <div class="md:col-span-2">
+          <label for="contact-message" class="sr-only">Sua mensagem</label>
+          <textarea id="contact-message" name="message" placeholder="Sua mensagem" rows="5" required
+                    class="p-3 sm:p-4 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-purple-400 text-white w-full text-sm sm:text-base lg:text-lg resize-none"
+                    aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="md:col-span-2 bg-purple-600 hover:bg-purple-700 py-3 sm:py-4 rounded-xl font-medium shadow-lg smooth-transition w-full text-sm sm:text-base lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed" id="submitBtn">
           Enviar Mensagem
         </button>
+        <div id="formMessage" class="md:col-span-2 text-center text-sm hidden" role="alert" aria-live="polite"></div>
       </form>
     </div>
   </div>
 
   <!-- Modal de Detalhes do Projeto -->
-  <div id="projectModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+  <div id="projectModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
     <div class="bg-white/5 backdrop-blur-md rounded-2xl sm:rounded-3xl max-w-5xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
-      <button id="closeProjectModal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-purple-400 hover:text-purple-200 text-2xl sm:text-3xl font-bold">&times;</button>
+      <button id="closeProjectModal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-purple-400 hover:text-purple-200 text-2xl sm:text-3xl font-bold" aria-label="Fechar modal de projeto">&times;</button>
       
       <div id="projectModalContent">
         <!-- Conteúdo será inserido dinamicamente -->
@@ -404,8 +557,20 @@
     </div>
   </div>
 
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-[60] flex items-center justify-center" role="alert" aria-live="assertive" aria-label="Carregando">
+    <div class="spinner"></div>
+  </div>
+
   <!-- Script Otimizado -->
   <script>
+    // Configuração e Utilitários
+    const CONFIG = {
+      throttleDelay: 100,
+      observerThreshold: 0.15,
+      observerMargin: '0px 0px -100px 0px'
+    };
+
     // Throttle para otimizar eventos
     function throttle(func, wait) {
       let timeout;
@@ -419,26 +584,30 @@
       };
     }
 
+    // Debounce para eventos de formulário
+    function debounce(func, wait) {
+      let timeout;
+      return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    }
+
     // Animação Fade-in/out bidirecional com IntersectionObserver
     const observerOptions = { 
-      threshold: 0.15, 
-      rootMargin: '0px 0px -100px 0px' 
+      threshold: CONFIG.observerThreshold, 
+      rootMargin: CONFIG.observerMargin
     };
     
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Elemento entrando na viewport
           entry.target.classList.add('appear');
           entry.target.classList.remove('disappear');
         } else {
-          // Elemento saindo da viewport
-          if (entry.boundingClientRect.top > 0) {
-            // Elemento está abaixo da viewport (ainda não foi visto)
-            entry.target.classList.remove('appear');
-            entry.target.classList.remove('disappear');
+          if (entry.boundingClientRect && entry.boundingClientRect.top > 0) {
+            entry.target.classList.remove('appear', 'disappear');
           } else {
-            // Elemento está acima da viewport (já foi visto e saiu)
             entry.target.classList.add('disappear');
             entry.target.classList.remove('appear');
           }
@@ -448,18 +617,28 @@
     
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-    // Modal Contato
+    // Modal de Contato
     const modal = document.getElementById('contactModal');
     const closeBtn = document.getElementById('closeModal');
     const contactLinks = document.querySelectorAll('.contact-link');
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+    const loadingOverlay = document.getElementById('loadingOverlay');
 
     contactLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        openContactModal();
       });
     });
+
+    function openContactModal() {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      const firstInput = document.getElementById('contact-name');
+      if (firstInput) firstInput.focus();
+    }
 
     function closeModal() {
       modal.classList.add('hidden');
@@ -471,6 +650,59 @@
       if(e.target === modal) closeModal();
     });
 
+    // Tratamento do formulário
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+      
+      // Validação básica
+      if (!data.name || !data.email || !data.message) {
+        showFormMessage('Por favor, preencha todos os campos.', 'error');
+        return;
+      }
+
+      // Validação de email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(data.email)) {
+        showFormMessage('Por favor, insira um email válido.', 'error');
+        return;
+      }
+
+      // Simular envio (aqui você integraria com backend real)
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      loadingOverlay.classList.remove('hidden');
+
+      try {
+        // Simulação de API call
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        showFormMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+        contactForm.reset();
+        
+        setTimeout(() => {
+          closeModal();
+          formMessage.classList.add('hidden');
+        }, 3000);
+      } catch (error) {
+        showFormMessage('Erro ao enviar mensagem. Tente novamente.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar Mensagem';
+        loadingOverlay.classList.add('hidden');
+      }
+    });
+
+    function showFormMessage(message, type) {
+      formMessage.textContent = message;
+      formMessage.className = `md:col-span-2 text-center text-sm p-3 rounded-lg ${
+        type === 'success' ? 'bg-green-500/20 text-green-300' : 'bg-red-500/20 text-red-300'
+      }`;
+      formMessage.classList.remove('hidden');
+    }
+
     // Menu Mobile
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -479,17 +711,28 @@
 
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.add('active');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     });
 
     function closeMobileMenuFunc() {
       mobileMenu.classList.remove('active');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
 
     closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
     mobileNavLinks.forEach(link => {
       link.addEventListener('click', closeMobileMenuFunc);
+    });
+
+    // Fechar menu mobile com tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (mobileMenu.classList.contains('active')) closeMobileMenuFunc();
+        if (!modal.classList.contains('hidden')) closeModal();
+        if (!projectModal.classList.contains('hidden')) closeProjectModalFunc();
+      }
     });
 
     // Header Scroll com throttle
@@ -500,16 +743,23 @@
       } else {
         header.classList.remove('bg-black/70', 'shadow-lg');
       }
-    }, 100);
+    }, CONFIG.throttleDelay);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Scroll suave para âncoras
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (href === '#contato') {
+          e.preventDefault();
+          openContactModal();
+          return;
+        }
+        
+        const target = document.querySelector(href);
         if (target) {
+          e.preventDefault();
           const headerOffset = 80;
           const elementPosition = target.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -587,7 +837,7 @@
           projectModalContent.innerHTML = `
             <div class="space-y-6">
               <div class="relative h-64 sm:h-80 rounded-xl overflow-hidden">
-                <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover" />
+                <img src="${project.image}" alt="${project.title}" width="800" height="500" class="w-full h-full object-cover" loading="lazy" />
                 <div class="absolute top-4 left-4">
                   <span class="px-3 py-1 bg-purple-600/80 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
                     ${project.category}
@@ -596,7 +846,7 @@
               </div>
 
               <div>
-                <h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">${project.title}</h3>
+                <h3 id="project-modal-title" class="text-3xl sm:text-4xl font-bold text-white mb-2">${project.title}</h3>
                 <p class="text-gray-300 text-lg">${project.description}</p>
               </div>
 
@@ -613,10 +863,10 @@
 
               <div class="bg-gradient-to-br from-purple-600/20 to-blue-600/20 p-6 rounded-xl border border-purple-500/30">
                 <h4 class="text-white font-semibold text-xl mb-4">📊 Resultados Alcançados</h4>
-                <ul class="space-y-2">
+                <ul class="space-y-2" role="list">
                   ${project.results.map(result => `
                     <li class="flex items-start gap-2 text-gray-300">
-                      <span class="text-purple-400 text-xl">✓</span>
+                      <span class="text-purple-400 text-xl" aria-hidden="true">✓</span>
                       <span>${result}</span>
                     </li>
                   `).join('')}
@@ -643,7 +893,7 @@
               </div>
 
               <div class="text-center pt-4">
-                <button class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-medium shadow-xl smooth-transition contact-link">
+                <button class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-medium shadow-xl smooth-transition contact-link-modal" aria-label="Solicitar projeto similar">
                   Quero um Projeto Assim
                 </button>
               </div>
@@ -651,12 +901,14 @@
           `;
           
           // Reativar listener do botão de contato dentro do modal
-          projectModalContent.querySelector('.contact-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            closeProjectModalFunc();
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-          });
+          const contactLinkModal = projectModalContent.querySelector('.contact-link-modal');
+          if (contactLinkModal) {
+            contactLinkModal.addEventListener('click', (e) => {
+              e.preventDefault();
+              closeProjectModalFunc();
+              openContactModal();
+            });
+          }
           
           projectModal.classList.remove('hidden');
           document.body.style.overflow = 'hidden';
@@ -673,6 +925,54 @@
     projectModal.addEventListener('click', (e) => { 
       if(e.target === projectModal) closeProjectModalFunc();
     });
+
+    // Performance: Lazy loading de imagens
+    if ('loading' in HTMLImageElement.prototype) {
+      // Navegador suporta lazy loading nativo
+      console.log('Lazy loading nativo ativado');
+    } else {
+      // Fallback para navegadores antigos
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      images.forEach(img => imageObserver.observe(img));
+    }
+
+    // Analytics simulation (substituir por Google Analytics real)
+    function trackEvent(category, action, label) {
+      console.log('Event tracked:', { category, action, label });
+      // window.gtag('event', action, { 'event_category': category, 'event_label': label });
+    }
+
+    // Tracking de cliques em CTAs
+    document.querySelectorAll('.contact-link').forEach(link => {
+      link.addEventListener('click', () => trackEvent('CTA', 'click', 'Contact Button'));
+    });
+
+    document.querySelectorAll('.project-detail-btn').forEach(btn => {
+      btn.addEventListener('click', () => trackEvent('Portfolio', 'view', btn.getAttribute('data-project')));
+    });
+
+    // Service Worker para PWA (opcional)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // navigator.serviceWorker.register('/sw.js')
+        //   .then(reg => console.log('Service Worker registrado'))
+        //   .catch(err => console.log('Erro ao registrar SW:', err));
+      });
+    }
+
+    // Console Easter Egg
+    console.log('%c🚀 Moduly', 'font-size: 24px; font-weight: bold; color: #9333ea;');
+    console.log('%cProcurando talentos em desenvolvimento web!', 'font-size: 14px; color: #a78bfa;');
+    console.log('%cEntre em contato: contato@moduly.com.br', 'font-size: 12px; color: #c4b5fd;');
   </script>
 
 </body>
